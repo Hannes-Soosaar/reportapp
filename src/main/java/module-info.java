@@ -8,6 +8,7 @@ module eu.report.reportapp {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
     opens eu.report.reportapp to javafx.fxml;
     exports eu.report.reportapp;

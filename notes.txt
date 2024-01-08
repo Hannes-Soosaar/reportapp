@@ -1,0 +1,25 @@
+
+to run the psql with W PowerShell
+
+Add bin to path
+
+$env:Path += ";C:\path\to\your\PostgreSQL\bin"
+
+
+login to db \: psql -U username -d myDataBase
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+to verify table type
+
+ \d
+
+ to inset data
+
+ INSERT INTO users (username, email) VALUES ('john_doe', 'john@example.com');
