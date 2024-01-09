@@ -24,7 +24,10 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="registerUserButton" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="94.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Register" textFill="#130fff">
+            <Button fx:id="registerUserButton" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0"
+                    mnemonicParsing="false" prefHeight="23.0" prefWidth="94.0" style="-fx-background-color: transparent;
+                     -fx-cursor: hand;" text="Register" textFill="#130fff"
+            onAction="#directToRegisterView">
                <HBox.margin>
                   <Insets />
                </HBox.margin>

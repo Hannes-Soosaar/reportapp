@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.lang.reflect.Field;
 
@@ -20,6 +21,12 @@ public class LoginController {
     private TextField userNameField;
     @FXML
     private PasswordField passwordField;
+
+    private ViewController viewController;
+
+    public void setViewController (ViewController viewController ){
+        this.viewController =viewController;
+    }
 
     public void loginUser() {
         UserOperations userOperations = new UserOperations();
@@ -35,10 +42,10 @@ public class LoginController {
 
     }
 
-    public void directToRegisterView(String userNameFiled){
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("register-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.getRoot());
 
+    public void directToRegisterView(){
+
+    viewController.startRegisterView();
     }
 
 }

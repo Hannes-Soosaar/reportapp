@@ -17,8 +17,7 @@ public class DatabaseManager {
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://localhost:5432/reportapp_db";
             String user = "postgres";
-            String password = getPassword();
-            System.out.println(password);
+            String password = getDbPassword();
             connection = DriverManager.getConnection(url, user, password);
             return connection;
         } catch (ClassNotFoundException e) {
@@ -39,7 +38,7 @@ public class DatabaseManager {
         }
     }
 
-    private static String getPassword(){
+    private static String getDbPassword(){
         StringBuilder password = new StringBuilder();
         String fileName ="src/main/resources/credentials.txt";
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
