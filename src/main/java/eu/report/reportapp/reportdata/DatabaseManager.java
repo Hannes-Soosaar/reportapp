@@ -1,5 +1,8 @@
 package eu.report.reportapp.reportdata;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,7 +17,8 @@ public class DatabaseManager {
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://localhost:5432/reportapp_db";
             String user = "postgres";
-            String password = System.getenv("REPORT_APP_DB_PASSWORD");
+            String password = getPassword();
+            System.out.println(password);
             connection = DriverManager.getConnection(url, user, password);
             return connection;
         } catch (ClassNotFoundException e) {
@@ -34,4 +38,19 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
+
+    private static String getPassword(){
+        StringBuilder password = new StringBuilder();
+        String fileName ="src/main/resources/credentials.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                password.append(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return password.toString();
+    }
+
 }
