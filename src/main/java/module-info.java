@@ -9,6 +9,7 @@ module eu.report.reportapp {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
+    requires org.postgresql.jdbc;
 
     opens eu.report.reportapp to javafx.fxml;
     exports eu.report.reportapp;
