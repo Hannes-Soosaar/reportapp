@@ -14,7 +14,7 @@ public class DatabaseManager {
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://localhost:5432/reportapp_db";
             String user = "postgres";
-            String password = "hannes123";
+            String password = System.getenv("REPORT_APP_DB_PASSWORD");
             connection = DriverManager.getConnection(url, user, password);
             return connection;
         } catch (ClassNotFoundException e) {
