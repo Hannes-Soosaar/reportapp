@@ -55,4 +55,15 @@ public class UserOperations {
         return userPassword.equals(password);
 
     }
+
+    public void createUser(String userNameInput, String passwordInput){
+       // check to see if the user matches
+        // check to see if the fields are filled
+        // check to see if the password matches the criteria
+    }
+
+    public void getUser(){
+
+    }
+
 }

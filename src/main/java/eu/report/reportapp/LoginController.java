@@ -24,8 +24,8 @@ public class LoginController {
 
     private ViewController viewController;
 
-    public void setViewController (ViewController viewController ){
-        this.viewController =viewController;
+    public void setViewController(ViewController viewController) {
+        this.viewController = viewController;
     }
 
     public void loginUser() {
@@ -39,13 +39,10 @@ public class LoginController {
         } else {
             System.out.println("Not a user");
         }
-
     }
 
-
-    public void directToRegisterView(){
-
-    viewController.startRegisterView();
+    public void directToRegisterView() {
+        viewController.startRegisterView();
     }
 
 }

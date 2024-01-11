@@ -6,8 +6,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class ReportApplication extends Application {
 
+
+// Create user screen
+//
+public class ReportApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -21,7 +24,6 @@ public class ReportApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
         launch();
     }
