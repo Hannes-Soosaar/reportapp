@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.report.reportapp.UserProfileController">
+   <children>
+      <Label fx:id="userNameLable" layoutX="191.0" layoutY="174.0" text="Welcome text" textFill="#e80d0d">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeProfileViewButton" layoutY= "100" layoutX="100" text="Close" onAction="#closeProfile">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
