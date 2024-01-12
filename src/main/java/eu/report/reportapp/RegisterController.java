@@ -1,11 +1,14 @@
 package eu.report.reportapp;
 
+import eu.report.reportapp.reportdata.UserOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 public class RegisterController {
 
@@ -13,21 +16,19 @@ public class RegisterController {
     private Button cancelButton;
     @FXML
     private Button createUserButton;
-
-    private ViewController viewController;
-
-    public void setViewController(ViewController viewController) {
-        this.viewController = viewController;
-    }
+    @FXML
+    private TextField userName;
+    @FXML
+    private PasswordField passwordField;
 
     public void returnToLoginView(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Scene scene = source.getScene();
-        viewController.startLoginView(scene.getWindow());
+        ViewController viewController = ViewController.getInstance();
+        viewController.startLoginView();
     }
 
-    public void createUser() {
-
+    public void createUser(ActionEvent event) {
+        UserOperations userOperations = new UserOperations();
+        userOperations.createUser(userName.getText(), passwordField.getText());
     }
 
 

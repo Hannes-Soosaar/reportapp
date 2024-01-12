@@ -21,28 +21,27 @@ public class LoginController {
     private TextField userNameField;
     @FXML
     private PasswordField passwordField;
+    private   ViewController viewController = ViewController.getInstance();
 
-    private ViewController viewController;
-
-    public void setViewController(ViewController viewController) {
-        this.viewController = viewController;
-    }
 
     public void loginUser() {
         UserOperations userOperations = new UserOperations();
-        boolean isActiveUser;
+
+        boolean isActiveUser; // todo check if user is active and what their accessLevel is
         if (userOperations.verifyUser(userNameField.getText(), passwordField.getText())) isActiveUser = true;
         else isActiveUser = false;
 
-        if (isActiveUser) {
-            System.out.println("Is a user");
+        if (isActiveUser) { //
+        viewController.startUserView(userNameField.getText()); // todo should pass in the value form the DB
         } else {
             System.out.println("Not a user");
         }
     }
 
     public void directToRegisterView() {
+        ViewController viewController = ViewController.getInstance();
         viewController.startRegisterView();
     }
+
 
 }
