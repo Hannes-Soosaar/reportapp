@@ -1,20 +1,15 @@
 package eu.report.reportapp;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class ReportApplication extends Application {
+
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ReportApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage stage) {
+        ViewController viewController = ViewController.getInstance();
+        viewController.setStage(stage);
+        viewController.startLoginView();
     }
 
     public static void main(String[] args) {
