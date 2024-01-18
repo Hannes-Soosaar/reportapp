@@ -12,10 +12,9 @@ private Button userProfile;
 
 private String activeUser;
 
-public void setActiveUser(String activeUser){ // todo there is an issue here with creating instances again.
+public void setActiveUser(String activeUser){
     this.activeUser=activeUser;
 }
-
 
 private ViewController viewController = ViewController.getInstance();
 
@@ -24,10 +23,7 @@ public void returnToLoginView(ActionEvent event){
 }
 
 public void updateProfile(){
-
     viewController.startUserProfileView(activeUser);
-    //todo make a site where you can change your details
-    // should be a pop-up window.
 }
 
 }

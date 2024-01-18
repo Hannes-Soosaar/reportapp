@@ -10,12 +10,11 @@ import java.io.IOException;
 
 /*
  the ViewController is setup to only have one instance that takes care of sharing the stage and reloading scenes
-
 */
-
 
 public class ViewController {
     private static ViewController instance;
+    private Stage stage;
 
     private ViewController() {
         // Constructor
@@ -27,8 +26,6 @@ public class ViewController {
         }
         return instance;
     }
-
-    private Stage stage;
 
     public void setStage(Stage stage) {
         this.stage = stage;

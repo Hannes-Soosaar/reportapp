@@ -8,7 +8,7 @@
 <?import javafx.scene.control.Button?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.report.reportapp.UserProfileController">
    <children>
-      <Label fx:id="userNameLable" layoutX="191.0" layoutY="174.0" text="Welcome text" textFill="#e80d0d">
+      <Label fx:id="userNameLabel" layoutX="191.0" layoutY="174.0" text="Welcome text" textFill="#e80d0d">
          <font>
             <Font size="36.0" />
          </font>
