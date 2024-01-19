@@ -5,21 +5,24 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class UserProfileController {
+    ViewController viewController = ViewController.getInstance();
 
-    private ViewController viewController =ViewController.getInstance();
     @FXML
     private Button closeProfileViewButton;
 
     @FXML
-    private Label userNameLable;
+    private Label userNameLabel;
     private String activeUser;
 
+
+
     public void setActiveUser(String activeUser){
-        this.activeUser = activeUser;
+        this.activeUser = viewController.getUserName();
     }
 
+
     public void updateWelcomeText(String activeUser){
-        userNameLable.setText("Welcome " + activeUser );
+        userNameLabel.setText("Welcome " + activeUser );
     }
     public void closeProfile(){
         System.out.println("Close the profile");

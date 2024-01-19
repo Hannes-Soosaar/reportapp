@@ -32,7 +32,9 @@ public class LoginController {
         else isActiveUser = false;
 
         if (isActiveUser) { //
-        viewController.startUserView(userNameField.getText());// todo should pass in the value form the DB
+            viewController.setUserName(userNameField.getText());
+            viewController.startUserView();
+
         } else {
             System.out.println("Not a user");
         }

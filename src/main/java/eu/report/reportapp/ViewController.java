@@ -10,22 +10,26 @@ import java.io.IOException;
 
 /*
  the ViewController is setup to only have one instance that takes care of sharing the stage and reloading scenes
-
 */
 
 
 public class ViewController {
     private static ViewController instance;
-
-    private ViewController() {
-        // Constructor
-    }
+    private String userName;
 
     public static ViewController getInstance() {
         if (instance == null) {
             instance = new ViewController();
         }
         return instance;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserName() {
+        return userName;
     }
 
     private Stage stage;
@@ -75,8 +79,8 @@ public class ViewController {
         }
     }
 
-    public void startUserView(String activeUser) {
-
+    public void startUserView() {
+        String activeUser = getUserName();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("user-view.fxml"));
             Parent root = fxmlLoader.load();
@@ -97,12 +101,14 @@ public class ViewController {
 
     }
 
-    public void startUserProfileView(String activeUser) {
-        UserController userController = new UserController();
-        userController.setActiveUser(activeUser);
+    public void startUserProfileView() {
+//        UserController userController = new UserController();
+        UserProfileController userProfileController = new UserProfileController();
+        String activeUser = getUserName();
+        userProfileController.setActiveUser(activeUser);
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("user-settings-view"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("user-settings-view.fxml"));
             Parent root = fxmlLoader.load();
             Scene scene = new Scene(root, 760, 540);
             Stage popStage = new Stage();
@@ -114,7 +120,6 @@ public class ViewController {
             e.printStackTrace();
         } finally {
             System.out.println("your are change" + activeUser);
-            UserProfileController userProfileController = new UserProfileController();
             userProfileController.setActiveUser(activeUser);
             userProfileController.updateWelcomeText(activeUser);
         }
