@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 public class UserProfileController {
     ViewController viewController = ViewController.getInstance();
 
+    private ViewController viewController =ViewController.getInstance();
     @FXML
     private Button closeProfileViewButton;
 
